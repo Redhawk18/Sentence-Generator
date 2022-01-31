@@ -1,5 +1,6 @@
 # created 1/17/2022
 # this file should create objects and append them into a longer string
+from fileinput import close
 import random
 
 def readTextfile(filename):
@@ -7,6 +8,7 @@ def readTextfile(filename):
     for i in open(filename, "r"):
         line = i.strip().lower()
         fileOutput.append(line)
+    close()
     return fileOutput
 
 #most basic sentence
