@@ -17,6 +17,6 @@ class verb(word):
         print("verb")
 
 class noun(word):
-
+    #for subclasses of noun make it so you have word() and wordAndParent() which turns a random word from it's own list and it's parents
     def word(self):
         print("noun")
