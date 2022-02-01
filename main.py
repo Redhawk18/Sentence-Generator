@@ -26,3 +26,5 @@ if random.randrange(maxAmountOfSentenceType) == 0:
     print(n)
 else: 
     print("no")
+
+    #test from desktop
