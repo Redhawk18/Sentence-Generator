@@ -13,6 +13,7 @@ def readTextfile(filename):
     return fileOutput
 
 #most basic sentence
+#test change
 
 
 #TODO make objects to make the words more print statements readable and to learn about python classes
