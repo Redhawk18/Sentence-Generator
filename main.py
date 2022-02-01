@@ -16,9 +16,9 @@ def readTextfile(filename):
 
 #TODO make objects to make the words more print statements readable and to learn about python classes
 #TODO add some kind of random so different sentences
-maxAmountOfSentenceType = 2
+amountOfSentenceTypes = 1
 
-if random.randrange(maxAmountOfSentenceType) == 0:
+if random.randrange(amountOfSentenceTypes) == 0:
     #sentence type 1
     #The adjective noun.
     n = noun(readTextfile("adjective.txt"))
