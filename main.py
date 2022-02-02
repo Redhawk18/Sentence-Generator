@@ -3,15 +3,18 @@
 import random
 from words import *
 
-amountOfSentenceTypes = 1
+amountOfSentenceTypes = 2
+rand = random.randrange(amountOfSentenceTypes)
 
-if random.randrange(amountOfSentenceTypes) == 0:
-    #sentence type 1
+if rand == 0:
     #"The" adjective noun.
-    
     n = noun("noun.txt")
     a = adjective("adjective.txt")
     print("The", a.print(), n.print() +".")
+
+elif  rand == 1:
+    #TODO logic
+    print()
     
 else: 
     print("amountOfSentenceTypes is wrong")
