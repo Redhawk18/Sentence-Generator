@@ -32,8 +32,8 @@ class word():
             line = wordlist[i]
             wordListWithParents.append(line)
         
-        for j in super.wordlist: #parent's list
-            line = super.wordlist[j]
+        for j in super().wordlist: #parent's list
+            line = super().wordlist[j]
             wordListWithParents.append(line)
 
         #both lists are in the same new list now, and there's no need to sort

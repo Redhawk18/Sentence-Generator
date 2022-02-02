@@ -11,7 +11,7 @@ if random.randrange(amountOfSentenceTypes) == 0:
     
     n = noun("noun.txt")
     a = adjective("adjective.txt")
-    print("The", n.print(), a.print() +".")
+    print("The", a.print(), n.print() +".")
     
 else: 
     print("amountOfSentenceTypes is wrong")
