@@ -20,7 +20,7 @@ class word():
     def __len__(self):
         return len(self.wordlist)
 
-    def print(self):
+    def __str__(self):
         '''this function returns a random word from the list passed into the object'''
         return random.choice(self.wordlist)
 
