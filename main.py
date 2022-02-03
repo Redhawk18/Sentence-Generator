@@ -11,10 +11,6 @@ if rand == 0:
     n = noun("noun.txt")
     a = adjective("adjective.txt")
     print("The", a.__str__(), n.__str__() +".")
-
-elif  rand == 1:
-    #TODO logic
-    print()
     
 else: 
     print("amountOfSentenceTypes is wrong")
