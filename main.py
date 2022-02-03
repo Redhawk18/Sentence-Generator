@@ -14,7 +14,7 @@ if rand == 0:
     #"The" adjective noun.
     n = noun(wordlists/"noun.txt")
     a = adjective(wordlists/"adjective.txt")
-    print("The", a.__str__(), n.__str__() +".")
+    print("The", a.randomize_word(), n.randomize_word() +".")
     
 else: 
     print("amountOfSentenceTypes is wrong")

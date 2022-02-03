@@ -20,24 +20,9 @@ class word():
     def __len__(self):
         return len(self.wordlist)
 
-    def __str__(self):
+    def randomize_word(self):
         '''this function returns a random word from the list passed into the object'''
         return random.choice(self.wordlist)
-
-    def printSelfAndParents(self, wordlist):
-        '''makes a new list that has the strings from the wordlist and the object parent's wordlist and returns one of them'''
-        wordListWithParents = ()
-        
-        for i in wordlist: #current object's list
-            line = wordlist[i]
-            wordListWithParents.append(line)
-        
-        for j in super().wordlist: #parent's list
-            line = super().wordlist[j]
-            wordListWithParents.append(line)
-
-        #both lists are in the same new list now, and there's no need to sort
-        return random.choice(self.wordListWithParents)
 
 class adjective(word):
     pass
