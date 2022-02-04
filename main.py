@@ -62,7 +62,6 @@ for arg in sys.argv:
     elif(arg == "-p" or arg == arg == "-phase"):
         '''disables the randomimze for sentence phases'''
         randomSentence = False
-print("loopControl", loopControl)
 
 
 pickAndPrintRandomSentence(loopControl, randomSentence)
