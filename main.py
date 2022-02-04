@@ -1,10 +1,7 @@
 # created 1/17/2022
 # this file should create objects and append them into a longer string
-from cmath import pi
-from operator import truediv
 import random
 from pathlib import Path
-from re import L
 import sys
 from words import *
 
@@ -15,6 +12,8 @@ def pickAndPrintRandomSentence(loopControl, randomSentence):
     #it's easier to have the same random in two places because of the RandomSentence boolean
     rand = random.randrange(amountOfSentenceTypes)
 
+    finalSentence = "" #to make printing to the screen faster
+
     for i in range(0, loopControl):    
         if(randomSentence == True):
             rand = random.randrange(amountOfSentenceTypes)
@@ -23,11 +22,13 @@ def pickAndPrintRandomSentence(loopControl, randomSentence):
             #"The" adjective noun.
             n = noun(wordlists/"noun.txt")
             a = adjective(wordlists/"adjective.txt")
-            print("The", a.randomizeWord(), n.randomizeWord() +".")
-                
+            sentence="The" + " " + a.randomizeWord() + " " + n.randomizeWord() +".\n"
+            
         else: 
             print("something is wrong...")
 
+        finalSentence+=sentence
+    print(finalSentence)
 
 #user input
 loopControl = 1 #these have to be passed to the function no matter what, even without input
