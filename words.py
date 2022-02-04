@@ -3,7 +3,7 @@ from fileinput import close
 import random
 
 def readTextfile(filename):
-    '''Takes a file name and creates a list and output's file content to list in all lowercase'''
+    '''Takes a filename and creates a list and output's file content to list in all lowercase'''
     fileOutput = []
     for i in open(filename, "r"):
         line = i.strip().lower()
@@ -17,11 +17,8 @@ class word():
     def __init__(self, fileName):
         self.wordlist = readTextfile(fileName)
 
-    def __len__(self):
-        return len(self.wordlist)
-
-    def randomize_word(self):
-        '''this function returns a random word from the list passed into the object'''
+    def randomizeWord(self):
+        '''returns a random word from the object's list'''
         return random.choice(self.wordlist)
 
 class adjective(word):
