@@ -8,12 +8,15 @@ from re import L
 import sys
 from words import *
 
-def pickAndPrintRandomSentence():
+def pickAndPrintRandomSentence(loopControl, RandomSentence):
     wordlists = Path("wordlists")
 
     amountOfSentenceTypes = 1
+    #it's easier to have the same random in two places because of the RandomSentence boolean
     rand = random.randrange(amountOfSentenceTypes)
 
+    #for i in range(0, loopControl):
+        
     if rand == 0:
         #"The" adjective noun.
         n = noun(wordlists/"noun.txt")
@@ -26,9 +29,9 @@ def pickAndPrintRandomSentence():
 
 #user input
 loopControl = 1 #these have to be passed to the function no matter what, even without input
-loopBoolean = False
 RandomSentence = True
 
+loopBoolean = False
 for arg in sys.argv:
     print("DEBUG: args", arg)
     if(arg == "-help" or arg == "--help" or arg == "-h"):
@@ -45,13 +48,22 @@ for arg in sys.argv:
         '''takes integer value after and will loop input-th amount of times, will fail if input is below 0'''
         loopBoolean = True
 
-    elif(loopBoolean):
-        loopControl = arg
-        loopBoolean = False
+    elif(loopBoolean): 
+        #messy, but collects the value after the flag is called
+        print(loopControl)
+        loopControl = int(arg)
+        
+        loopBoolean = False #so the value isn't overwritten
+
+        #check loopControl for value integer
+        print(loopControl)
+        if(loopControl < 1):
+            print("Invalid loop input ")
+            sys.exit()
 
     elif(arg == "-p" or arg == arg == "-phase"):
         '''disables the randomimze for sentence phases'''
         RandomSentence = False
-
+print("loopControl", loopControl)
 
 
