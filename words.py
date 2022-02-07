@@ -11,7 +11,7 @@ def readTextfile(filename):
     close()
     return fileOutput
 
-class word():
+class Word():
     @abstractclassmethod
 
     def __init__(self, fileName):
@@ -21,11 +21,14 @@ class word():
         '''returns a random word from the object's list'''
         return random.choice(self.wordlist)
 
-class adjective(word):
+class Adjective(Word):
     pass
 
-class verb(word):
+class Verb(Word):
     pass
 
-class noun(word):
+class Noun(Word):
+    pass
+
+class ProNoun(Noun):
     pass

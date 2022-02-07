@@ -8,7 +8,7 @@ from words import *
 def pickAndPrintRandomSentence(loopControl, randomSentence):
     wordlists = Path("wordlists")
 
-    amountOfSentenceTypes = 1
+    amountOfSentenceTypes = 3
     #it's easier to have the same random in two places because of the RandomSentence boolean
     rand = random.randrange(amountOfSentenceTypes)
 
@@ -20,15 +20,25 @@ def pickAndPrintRandomSentence(loopControl, randomSentence):
 
         if rand == 0:
             #"The" adjective noun.
-            n = noun(wordlists/"noun.txt")
-            a = adjective(wordlists/"adjective.txt")
-            sentence="The" + " " + a.randomizeWord() + " " + n.randomizeWord() +".\n"
+            n = Noun(wordlists/"noun.txt")
+            a = Adjective(wordlists/"adjective.txt")
+            print("The", a.randomizeWord(), n.randomizeWord() +".")
+
+        elif rand == 1:
+            #"I was trying to" verb.
+            v = Verb(wordlists/"verb.txt")
+            print("I was trying to", v.randomizeWord() + ".")
+
+        elif rand == 2:
+            #pronoun "was" verb
+            pn = ProNoun(wordlists/"pronoun.txt")
+            v = Verb(wordlists/"verb.txt")
+            print(pn.randomizeWord(), "was", v.randomizeWord() + ".")
             
         else: 
             print("something is wrong...")
-
-        finalSentence+=sentence
-    print(finalSentence)
+            print("rand =", rand)
+    
 
 #user input
 loopControl = 1 #these have to be passed to the function no matter what, even without input
