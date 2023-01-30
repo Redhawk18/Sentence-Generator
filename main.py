@@ -6,7 +6,8 @@ import sys
 from words import *
 
 def pickAndPrintRandomSentence(loopControl, randomSentence):
-    wordlists = Path("wordlists")
+    project_path = Path(__file__).parent.resolve()
+    wordlists = Path(str(project_path) + "/wordlists")
 
     amountOfSentenceTypes = 3
     #it's easier to have the same random in two places because of the RandomSentence boolean
@@ -14,7 +15,7 @@ def pickAndPrintRandomSentence(loopControl, randomSentence):
 
     finalSentence = "" #to make printing to the screen faster
 
-    for i in range(0, loopControl):    
+    for i in range(0, loopControl):
         if(randomSentence == True):
             rand = random.randrange(amountOfSentenceTypes)
 
@@ -34,11 +35,11 @@ def pickAndPrintRandomSentence(loopControl, randomSentence):
             pn = ProNoun(wordlists/"pronoun.txt")
             v = Verb(wordlists/"verb.txt")
             print(pn.randomizeWord(), "was", v.randomizeWord() + ".")
-            
-        else: 
+
+        else:
             print("something is wrong...")
             print("rand =", rand)
-    
+
 
 #user input
 loopControl = 1 #these have to be passed to the function no matter what, even without input
@@ -60,7 +61,7 @@ for arg in sys.argv:
         '''takes integer value after and will loop input-th amount of times, will fail if input is below 0'''
         loopBoolean = True
 
-    elif(loopBoolean): 
+    elif(loopBoolean):
         #messy code, but collects the value after the flag is called
         loopControl = int(arg)
         loopBoolean = False #so the value isn't overwritten
